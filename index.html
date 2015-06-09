@@ -1,0 +1,91 @@
+<html>
+
+<head>
+    <style type="text/css">
+        body {
+            overflow: hidden;
+            vertical-align: middle;
+        }
+        
+        #red {
+            border-radius: 200px;
+            position: relative;
+        }
+        
+        #bd {
+            height: 700px;
+            vertical-align: middle;
+            margin-top: 50px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <center>
+
+
+        <div id="bd">
+            <div id="green">
+                <div id="red">
+
+                </div>
+
+            </div>
+        </div>
+    </center>
+
+
+    <script type="text/javascript">
+        red = document.getElementById('red').style;
+        green = document.getElementById('green').style;
+        width = 500;
+        flag(red, green, width);
+        maxh = screen.availHeight * .75;
+
+        function flag(red, green, width) {
+            red.backgroundColor = 'red';
+            red.position = 'realtive';
+            green.backgroundColor = 'green';
+            x = width;
+            green.width = parseInt(x);
+            green.height = parseInt(x * 3 / 5);
+            red.left = parseInt(-x / 20);
+            red.top = parseInt(x / 10);
+            red.width = parseInt(2 * x / 5);
+            red.height = parseInt(2 * x / 5);
+            red.borderRadius = parseInt(x);
+        }
+
+
+
+        function doResize(e) {
+            var evt = window.event || e;
+            var delta = evt.detail ? evt.detail * (-120) : evt.wheelDelta;
+            if (delta < 0) {
+                width *= 1.02;
+
+            } else {
+                width *= 0.98;
+            }
+            if (width < 1) width = 1;
+            if (maxh < width * .6)
+                width = maxh / 0.6;
+
+            flag(red, green, width);
+        }
+
+        var mousewheelevt = (/Firefox/i.test(navigator.userAgent)) ? "DOMMouseScroll" : "mousewheel";
+
+        if (document.attachEvent)
+            document.attachEvent("on" + mousewheelevt, doResize);
+        else if (document.addEventListener)
+            document.addEventListener(mousewheelevt, doResize, false);
+    </script>
+
+
+</body>
+
+
+</html>

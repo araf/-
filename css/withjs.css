@@ -1,0 +1,15 @@
+body {
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+#red {
+    border-radius: 200px;
+    position: relative;
+}
+
+#bd {
+    height: 700px;
+    vertical-align: middle;
+    margin-top: 50px;
+}

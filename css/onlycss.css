@@ -1,0 +1,25 @@
+body {
+    overflow: hidden;
+}
+
+#green {
+    width: 500px;
+    height: 300px;
+    background-color: green;
+    position: relative;
+    text-align: left;
+}
+
+#red {
+    background-color: red;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    position: relative;
+    left: 125px;
+    top: 50px;
+}
+
+#potaka {
+    margin-top: 100px;
+}
